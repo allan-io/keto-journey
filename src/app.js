@@ -40,6 +40,30 @@ app.get('/recipes', (req, res) => {
     })
 })
 
+app.get('/blog/*', (req, res) => {
+    res.render('404', {
+        error: 'Blog article not found.'
+    })
+}
+)
+app.get('/collections/*', (req, res) => {
+    res.render('404', {
+        error: 'Collection not found.'
+    })
+})
+
+app.get('/recipe/*', (req, res) => {
+    res.render('404', {
+        error: 'Recipe not found.'
+    })
+})
+
+app.get('*', (req, res) => {
+    res.render('404', {
+        error: 'Page not found.'
+    })
+})
+
 app.listen(4000, () => {
     console.log('Server is running on port 4000')
 })
